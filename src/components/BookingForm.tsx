@@ -10,7 +10,6 @@ import stage1 from '../public/bg1.jpg'
 import Islamabad from '../public/islamabad.webp'
 import Chakwal from '../public/chk.webp'
 import Lahore from '../public/lahore.webp'
-import 'isomorphic-fetch';
 
 
 const BookingForm = () => {

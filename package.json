@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "isomorphic-fetch": "^3.0.0",
+    "isomorphic-unfetch": "^4.0.2",
     "mongodb": "^6.2.0",
     "mongoose": "^8.0.0",
     "next": "14.0.0",
