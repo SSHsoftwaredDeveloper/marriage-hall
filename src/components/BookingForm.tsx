@@ -142,38 +142,11 @@ const BookingForm = () => {
     //     setDishes(dishesAsString);
 
     // }
-    const handleDishes = (selectedLunch) => {
+    const handleDishes = (selectedLunch : any) => {
         setSelectedLunchs(selectedLunch);
-        const getDishes = selectedLunch.map((dish) => dish.label);
+        const getDishes = selectedLunch.map((dish : any) => dish.label);
         setDishes(getDishes);
-    }
-
-    // const handleDishes = (selectedLunch) => {
-    //     if (!Array.isArray(selectedLunch)) {
-    //         selectedLunch = [selectedLunch];
-    //     }
-    
-    //     const getDishes = selectedLunch.map((dish) => ({
-    //         label: dish.label,
-    //         value: dish.value
-    //     }));
-    //     setDishes(getDishes);
-    // };
-
-    // const handleDishes = (selectedDishes) => {
-    //     if (selectedDishes) {
-    //         const selectedDishesValues = selectedDishes.map((dish) => dish.value);
-    //         setDishes(selectedDishesValues);
-    //     } else {
-    //         // Handle the case where no dishes are selected.
-    //         setDishes([]);
-    //     }
-    // };
-    
-    
-    
-    
-    
+    } 
 
     function handleChange(e: any) {
         const name = e.target.name;
@@ -186,7 +159,7 @@ const BookingForm = () => {
         try {
             const response = await fetch('/api/form', {
                 method: "POST",
-                headers: { "Content_Type": "application/json" },
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     day: day,
                     time: time,
@@ -203,6 +176,7 @@ const BookingForm = () => {
                     message: ""
                 })
                 setStatus('success');
+                // setDisabled(true);
             } else {
                 setStatus('error');
             }
@@ -228,8 +202,8 @@ const BookingForm = () => {
                             <div className='md:flex'>
                                 <div className='w-auto mr-4'>
                                     <select name='day' id='day' required placeholder='Day' onChange={(e) => handleDay(e)} className='bg-orange-100 text-black w-full md:w-[180px] rounded-md  flex flex-col p-3 hover:bg-orange-300 justify-center  items-center'>
-                                        {days.map(day => (
-                                            <option value={day.value}>{day.label}</option>
+                                        {days.map((day , index) => (
+                                            <option  key={index} value={day.value}>{day.label}</option>
                                         ))}
 
                                     </select>
@@ -242,8 +216,8 @@ const BookingForm = () => {
                         <div className='w-full p-3'>
                             <h1 className='text-lg'>Time</h1>
                             <select name='time' id='time' required placeholder='time' onChange={(e) => handleTime(e)} className='bg-orange-100 text-black w-full md:w-[180px] rounded-md  flex flex-col p-3 hover:bg-orange-300 justify-center  items-center'>
-                                {times.map(time => (
-                                    <option value={time.value}>{time.label}</option>
+                                {times.map((time , index) => (
+                                    <option  key={index} value={time.value}>{time.label}</option>
                                 ))}
                             </select>
                         </div>
@@ -254,7 +228,7 @@ const BookingForm = () => {
                                 name='dishes'
                                 id='dishes'
                                 options={Dishes}
-                                value={selectedLunchs}
+                                // value={selectedLunchs}
                                 onChange={handleDishes}
                                 isMulti={true}
                                 className='w-full z-50 text-black'

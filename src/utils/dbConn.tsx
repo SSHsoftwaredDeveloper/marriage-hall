@@ -9,10 +9,10 @@ if (!MONGODB_URL) {
 }
 
 
-let cached = global.mongoose;
+let cached = (global as any).mongoose ;
 
 if (!cached) {
-    cached = global.mongoose = {con: null, promise: null}
+    cached = (global as any).mongoose = {con: null, promise: null}
 }
 
 const dbConnect = async () => {
