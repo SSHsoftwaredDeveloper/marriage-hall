@@ -158,23 +158,16 @@ const BookingForm = () => {
     const handleSubmit = async (e: any) => {
         e.preventDefault();
         try {
-
-            const headers = new Headers({
-                'Content-Type': 'application/json',
-                // Add other headers as needed
-              });
-              
-
             const response = await fetch('/api/form', {
                 method: "POST",
-                headers: headers,
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     day: day,
                     time: time,
                     dishes: dishes,
                     message: user.message,
                 }),
-            });
+            })
 
             if (response.status === 200) {
                 setUser({
