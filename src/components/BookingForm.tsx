@@ -158,9 +158,16 @@ const BookingForm = () => {
     const handleSubmit = async (e: any) => {
         e.preventDefault();
         try {
+
+            const headers = new Headers({
+                'Content-Type': 'application/json',
+                // Add other headers as needed
+              });
+              
+
             const response = await fetch('/api/form', {
                 method: "POST",
-                headers: new Headers({ "Content-Type": "application/json" }),
+                headers: headers,
                 body: JSON.stringify({
                     day: day,
                     time: time,
