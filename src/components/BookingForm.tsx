@@ -16,7 +16,8 @@ const BookingForm = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [value, setValue] = useState('');
 
-    const [selectedLunchs, setSelectedLunchs] = useState("");
+    const [selectedLunchs, setSelectedLunchs] = useState('');
+
     const [day, setDay] = useState('');
     const [time, setTime] = useState('');
     const [dishes, setDishes] = useState('');
@@ -41,36 +42,36 @@ const BookingForm = () => {
     ]
 
     const Dishes = [
-        { label: "Chicken Tikka . . . . . . . . . . .  $250", value: "Chicken Tikka $250" },
-        { label: "Gola Kabab . . . . . . . . . . .   $100", value: "Gola Kabab $100" },
-        { label: "Kabab . . . . . . . . . . . $20 ", value: "Kabab $20 " },
-        { label: "Chicken Biryani . . . . . . . . . . .  $300", value: "Chicken Biryani $300" },
-        { label: "Beef Biryani . . . . . . . . . . .  $350", value: "Beef Biryani $350" },
-        { label: " Beef Qurma . . . . . . . . . . .  $400", value: " Beef Qurma $400" },
-        { label: "Roti + Taftan . . . . . . . . . . .  $2", value: "Roti + Taftan $2" },
-        { label: "Brost Fish . . . . . . . . . . .  $450", value: "Brost Fish $450" },
-        { label: "Arabian Puff . . . . . . . . . . .  $25000", value: "Arabian Puff $25000" },
-        { label: "Bombay Biryani . . . . . . . . . . .  $500", value: "Bombay Biryani $500" },
-        { label: " Cheese Cone . . . . . . . . . . .  $300", value: " Cheese Cone $300" },
-        { label: "Matan Qurma . . . . . . . . . . .  $550", value: "Matan Qurma $550" },
-        { label: "Matan Biryani . . . . . . . . . . .  $600", value: "Matan Biryani $600" },
-        { label: "Halwa Suji . . . . . . . . . . .  $100", value: "Halwa Suji $100" },
-        { label: "Raita . . . . . . . . . . .  $10", value: "Raita $10" },
-        { label: "Chatni . . . . . . . . . . .  $5", value: "Chatni $5" },
-        { label: "Salad . . . . . . . . . . .  $5", value: "Salad $5" },
-        { label: "Halwa . . . . . . . . . . .  $10", value: "Halwa $10" },
-        { label: "Puri . . . . . . . . . . .  $10", value: "Puri $10" },
-        { label: "Tea . . . . . . . . . . .  $5", value: "Tea $5" },
-        { label: "Lab-e-Sheere . . . . . . . . . . .  $10", value: "Lab-e-Sheere $10" },
-        { label: "Pista Kheer . . . . . . . . . . .  $10", value: "Pista Kheer $10" },
-        { label: "Qulfa Khee . . . . . . . . . . . r $10", value: "Qulfa Khee $10" },
-        { label: "Gajjar ka Halwa . . . . . . . . . . .  $10", value: "Gajjar ka Halwa $10" },
-        { label: "Pista Kheer . . . . . . . . . . .  $15", value: "Pista Kheer $15" },
-        { label: "Soft Drinks . . . . . . . . . . .  $10", value: "Soft Drinks $10" },
-        { label: "Mineral Water . . . . . . . . . . .  $8", value: "Mineral Water $8" },
-        { label: "Sweet Rice . . . . . . . . . . .  $50", value: "Sweet Rice $50" },
-        { label: "Soap . . . . . . . . . . .  $10", value: "Soap $10" },
-        { label: "Chiken Soap . . . . . . . . . . .  $30", value: "Chiken Soap $30" },
+        { label: "Chicken Tikka - $250", value: "Chicken Tikka $250" },
+        { label: "Gola Kabab - $100", value: "Gola Kabab $100" },
+        { label: "Kabab - $20 ", value: "Kabab $20 " },
+        { label: "Chicken Biryani - $300", value: "Chicken Biryani $300" },
+        { label: "Beef Biryani - $350", value: "Beef Biryani $350" },
+        { label: " Beef Qurma - $400", value: " Beef Qurma $400" },
+        { label: "Roti + Taftan - $2", value: "Roti + Taftan $2" },
+        { label: "Brost Fish - $450", value: "Brost Fish $450" },
+        { label: "Arabian Puff - $25000", value: "Arabian Puff $25000" },
+        { label: "Bombay Biryani - $500", value: "Bombay Biryani $500" },
+        { label: " Cheese Cone - $300", value: " Cheese Cone $300" },
+        { label: "Matan Qurma - $550", value: "Matan Qurma $550" },
+        { label: "Matan Biryani - $600", value: "Matan Biryani $600" },
+        { label: "Halwa Suji - $100", value: "Halwa Suji $100" },
+        { label: "Raita - $10", value: "Raita $10" },
+        { label: "Chatni - $5", value: "Chatni $5" },
+        { label: "Salad - $5", value: "Salad $5" },
+        { label: "Halwa - $10", value: "Halwa $10" },
+        { label: "Puri - $10", value: "Puri $10" },
+        { label: "Tea - $5", value: "Tea $5" },
+        { label: "Lab-e-Sheere - $10", value: "Lab-e-Sheere $10" },
+        { label: "Pista Kheer - $10", value: "Pista Kheer $10" },
+        { label: "Qulfa Khee - $10", value: "Qulfa Khee $10" },
+        { label: "Gajjar ka Halwa - $10", value: "Gajjar ka Halwa $10" },
+        { label: "Pista Kheer - $15", value: "Pista Kheer $15" },
+        { label: "Soft Drinks - $10", value: "Soft Drinks $10" },
+        { label: "Mineral Water - $8", value: "Mineral Water $8" },
+        { label: "Sweet Rice - $50", value: "Sweet Rice $50" },
+        { label: "Soap - $10", value: "Soap $10" },
+        { label: "Chiken Soap - $30", value: "Chiken Soap $30" },
     ]
 
     const prices = [
@@ -133,14 +134,46 @@ const BookingForm = () => {
         setTime(getTime);
     }
 
+    // const handleDishes = (selectedLunch) => {
+    //     setSelectedLunchs(selectedLunch);
+    //     // const getDishes = e.target.value;
+    //     const getDishes = selectedLunch.map((dish) => dish.value);
+    //     const dishesAsString = JSON.stringify(getDishes);
+    //     setDishes(dishesAsString);
+
+    // }
     const handleDishes = (selectedLunch) => {
         setSelectedLunchs(selectedLunch);
-        // const getDishes = e.target.value;
-        const getDishes = selectedLunch.map((dish) => dish.value);
-        const dishesAsString = JSON.stringify(getDishes);
-        setDishes(dishesAsString);
-
+        const getDishes = selectedLunch.map((dish) => dish.label);
+        setDishes(getDishes);
     }
+
+    // const handleDishes = (selectedLunch) => {
+    //     if (!Array.isArray(selectedLunch)) {
+    //         selectedLunch = [selectedLunch];
+    //     }
+    
+    //     const getDishes = selectedLunch.map((dish) => ({
+    //         label: dish.label,
+    //         value: dish.value
+    //     }));
+    //     setDishes(getDishes);
+    // };
+
+    // const handleDishes = (selectedDishes) => {
+    //     if (selectedDishes) {
+    //         const selectedDishesValues = selectedDishes.map((dish) => dish.value);
+    //         setDishes(selectedDishesValues);
+    //     } else {
+    //         // Handle the case where no dishes are selected.
+    //         setDishes([]);
+    //     }
+    // };
+    
+    
+    
+    
+    
 
     function handleChange(e: any) {
         const name = e.target.name;
@@ -285,7 +318,7 @@ const BookingForm = () => {
                             <button className='text-xl text-white bg-orange-400  flex justify-center items-center rounded-md p-3 m-3'>$1000</button>
                         </div>
 
-
+ 
                     </div>
                 </div>
             </div>

@@ -9,11 +9,7 @@ const formSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    dishes: {
-        type: [{ label: String , 
-            value: String }],
-        required: true,
-    },
+    dishes: [String],
     message: {
         type : String,
         required: true,
