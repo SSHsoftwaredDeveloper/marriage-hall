@@ -1,0 +1,7 @@
+[
+    { "Dish": "Chicken Tikka" , "price" : "$250"},
+        { "Dish": "Gola Kabab" , "price" : "$150"},
+        { "Dish": "Kabab" , "price" : "$50"},
+        { "Dish": "Chicken Biryani" , "price" : "$350"},
+        { "Dish": "Beef Biryani" , "price" : "$550"}
+]
